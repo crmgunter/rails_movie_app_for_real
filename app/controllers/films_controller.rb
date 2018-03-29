@@ -1,5 +1,11 @@
 class FilmsController < ApplicationController
   def index
-    @film = Film.generate(rand(100))
+    @film = Film.all
   end
+
+  def show
+    id = params[:id]
+    @films = Film.find(id)
+  end
+
 end

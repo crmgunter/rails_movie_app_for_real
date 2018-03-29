@@ -1,9 +1,10 @@
 <h1>Films#index</h1>
 <p>Find me in app/views/films/index.html.erb</p>
 
-
-<div class="films">
-  <%# <%= image_tag @film.photo %>
-  <h3><%= @film.api_id %></h3>
-  <h3><%= @film.title %></h3>
+<% @film.each do |film| %>
+<div>
+    <a href="/films/<%= film.id %>">
+    <h2><%= film.title %></h2>
+    </a>
 </div>
+<%end%>
