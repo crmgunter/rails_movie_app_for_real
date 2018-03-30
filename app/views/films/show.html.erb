@@ -3,4 +3,5 @@
 <p><%= @films.year %></p>
 <p><%= @films.synopsis %></p>
 
+<a href="/films/<%= @films.id %>/edit"><button>Edit Movie</button></a>
 <%= button_to "Delete Movie", @destroy, :method => :delete%>
