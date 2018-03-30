@@ -2,3 +2,5 @@
 <h1><%= @films.title %></h1>
 <p><%= @films.year %></p>
 <p><%= @films.synopsis %></p>
+
+<%= button_to "Delete Movie", @destroy, :method => :delete%>
