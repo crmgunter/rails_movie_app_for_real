@@ -8,16 +8,27 @@ class FilmsController < ApplicationController
     @films = Film.find(id)
   end
 
+  def new
+    @film = Film.new
+  end
+
   def create
-    @new_film = Film.create(film_params)
-    puts @new_film
-    redirect_to("/films/#{@new_film.id}")
+    @film = Film.create!(film_params)
+    redirect_to films_url
+  end
+
+  def update
+
+  end
+
+  def destroy
+    Film.find(params[:id]).destroy
+    redirect_to("/films")
   end
 
 
   private
   def film_params
-    params.require(:film).permit(:title, :photo, :year, :synopsis)
+    params.require(:film).permit(:title, :photo, :genre, :year, :synopsis)
   end
-
 end
